@@ -301,9 +301,9 @@ func ConsensusParams(heightPtr *int64) (*ctypes.ResultConsensusParams, error) {
 		return nil, err
 	}
 
-	consensusparams, err := sm.LoadConsensusParams(stateDB, height)
+	consensusParams, err := sm.LoadConsensusParams(stateDB, height)
 	if err != nil {
 		return nil, err
 	}
-	return &ctypes.ResultConsensusParams{BlockHeight: height, ConsensusParams: consensusparams}, nil
+	return &ctypes.ResultConsensusParams{BlockHeight: height, ConsensusParams: consensusParams}, nil
 }
